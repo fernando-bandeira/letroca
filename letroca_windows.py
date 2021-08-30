@@ -106,9 +106,8 @@ while True:
             cond2 = parcial.count(entrada) < letras.count(entrada.upper())
             if (cond1 and cond2) or '*' in entrada:
                 parcial.append(entrada)
-            elif entrada == '\x08':
-                if len(parcial) > 0:
-                    parcial.pop()
+            elif entrada == '\x08' and len(parcial) > 0:
+                parcial.pop()
             elif entrada == '\r':
                 shuffle(letras)
             entrada = ''
